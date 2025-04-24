@@ -21,7 +21,7 @@ pipeline {
         stage('Push to Docker Hub') {
             steps {
                 script {
-                    sh "echo $DOCKERHUB_CREDENTIALS_PSW | sudo docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin"
+                    sh "echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin"
                     sh "sudo docker push $IMAGE_NAME:prod"
                 }
             }
