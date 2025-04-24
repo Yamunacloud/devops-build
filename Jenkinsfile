@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        DOCKERHUB_CREDENTIALS = credentials('3d9acecb-ef2e-4f9b-97cf-b6ee4583c685') // Add in Jenkins credentials
+        DOCKERHUB_CREDENTIALS = credentials('6be745f1-1b13-43d9-a7a0-02d2ec7f96ed') // Add in Jenkins credentials
         IMAGE_NAME = "yamunacloud/prod"
     }
 
