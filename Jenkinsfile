@@ -14,15 +14,15 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t $IMAGE_NAME:prod .'
+                sh 'sudo docker build -t $IMAGE_NAME:prod .'
             }
         }
 
         stage('Push to Docker Hub') {
             steps {
                 script {
-                    sh "echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin"
-                    sh "docker push $IMAGE_NAME:prod"
+                    sh "echo $DOCKERHUB_CREDENTIALS_PSW | sudo docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin"
+                    sh "sudo docker push $IMAGE_NAME:prod"
                 }
             }
         }
